@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dobvrx5oawt44"]
+
+[ext_resource type="Script" uid="uid://dd8l2d30ctuat" path="res://scripit/ammo.gd" id="1_bcbga"]
+[ext_resource type="Texture2D" uid="uid://c3jeqfiqcnrhw" path="res://sprites/—Pngtree—cloud or smoke on an_8473681.png" id="2_lgjle"]
+[ext_resource type="Texture2D" uid="uid://br3lva370wcn2" path="res://sprites/Survivor Spine/Survivor Spine/images/ammo_clip_full.png" id="2_v6p2v"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bcbga"]
+radius = 9.42579
+height = 41.5061
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_bcbga")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+rotation = 1.36255
+shape = SubResource("CapsuleShape2D_bcbga")
+
+[node name="—pngtree—cloudOrSmokeOnAn8473681" type="Sprite2D" parent="."]
+position = Vector2(0.111111, 0.5)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("2_lgjle")
+
+[node name="AmmoClipFull" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_v6p2v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

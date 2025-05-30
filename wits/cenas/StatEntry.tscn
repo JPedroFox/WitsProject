@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://b606o1tjjli4q"]
+
+[ext_resource type="LabelSettings" uid="uid://brbc056ui18mj" path="res://scripit/dados.tres" id="1_cmtmh"]
+
+[node name="StatEntry" type="HBoxContainer"]
+anchors_preset = -1
+anchor_right = 0.434375
+anchor_bottom = 0.0388889
+offset_right = -179.0
+size_flags_horizontal = 3
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Colocacao" type="Label" parent="."]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 10.0
+label_settings = ExtResource("1_cmtmh")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Nome" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "NAME"
+label_settings = ExtResource("1_cmtmh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tempo" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "TIME"
+label_settings = ExtResource("1_cmtmh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Zumbis" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "KILLS"
+label_settings = ExtResource("1_cmtmh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="dificuldade" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "DIFFICULTY"
+label_settings = ExtResource("1_cmtmh")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck100t6vihe3f"]
+
+[ext_resource type="Script" uid="uid://c1v2i7vtmba4a" path="res://scripit/Bullet.gd" id="1_c6wka"]
+[ext_resource type="Texture2D" uid="uid://dfucw6c6x7ake" path="res://sprites/Survivor Spine/Survivor Spine/images/Bullet.png" id="2_og5kd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7h0ux"]
+radius = 2.0
+height = 68.0
+
+[node name="Bullet" type="Area2D"]
+script = ExtResource("1_c6wka")
+speed = 2000
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(13, 0)
+scale = Vector2(0.677778, 0.45)
+texture = ExtResource("2_og5kd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_7h0ux")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

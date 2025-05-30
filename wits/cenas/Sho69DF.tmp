@@ -1,0 +1,122 @@
+[gd_scene load_steps=26 format=3 uid="uid://cgpa8st56r5mk"]
+
+[ext_resource type="Script" path="res://scripit/Shotgun.gd" id="1_e3y1h"]
+[ext_resource type="Texture2D" uid="uid://ds4p82gvfi25t" path="res://player/Survivor Spine/Survivor Spine/images/muzzle_flash_01.png" id="2_non1k"]
+[ext_resource type="Texture2D" uid="uid://d2rcnpbhlrnfv" path="res://player/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_0.png" id="3_6ujj6"]
+[ext_resource type="Texture2D" uid="uid://lamy2rmul4fy" path="res://player/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_1.png" id="4_a2utb"]
+[ext_resource type="Texture2D" uid="uid://cg3qbcip64dbc" path="res://player/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_2.png" id="5_0jbqd"]
+[ext_resource type="Texture2D" uid="uid://ba1687h5qwb2" path="res://player/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_3.png" id="6_rjeip"]
+[ext_resource type="Texture2D" uid="uid://bh3ywqa62be6n" path="res://player/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_4.png" id="7_qkgcp"]
+[ext_resource type="Texture2D" uid="uid://bm7qff3dubag6" path="res://player/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_5.png" id="8_y32j5"]
+[ext_resource type="Texture2D" uid="uid://r8nut35a1qcb" path="res://player/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_6.png" id="9_wdnxo"]
+[ext_resource type="Texture2D" uid="uid://cvcq1ygkkir1f" path="res://player/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_7.png" id="10_c2bp3"]
+[ext_resource type="Texture2D" uid="uid://4xgfq7l3sta1" path="res://player/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_8.png" id="11_0wwqn"]
+[ext_resource type="Texture2D" uid="uid://cgvll4niip6y0" path="res://player/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_9.png" id="12_47xb3"]
+[ext_resource type="Texture2D" uid="uid://baca7edfkam73" path="res://player/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_10.png" id="13_dmq70"]
+[ext_resource type="Texture2D" uid="uid://ta1uvoarmmop" path="res://player/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_11.png" id="14_liuch"]
+[ext_resource type="Texture2D" uid="uid://qxx7oodahjjd" path="res://player/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_12.png" id="15_k8n8y"]
+[ext_resource type="Texture2D" uid="uid://dox424aofqvkc" path="res://player/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_13.png" id="16_p7fvx"]
+[ext_resource type="Texture2D" uid="uid://bm0vkcdv5riav" path="res://player/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_15.png" id="17_jh4a7"]
+[ext_resource type="Texture2D" uid="uid://b255bemvo7eme" path="res://player/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_16.png" id="18_x0ol8"]
+[ext_resource type="Texture2D" uid="uid://bq4cha7vmah6a" path="res://player/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_17.png" id="19_x2atu"]
+[ext_resource type="Texture2D" uid="uid://7pqcu4kgiiyb" path="res://player/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_18.png" id="20_7rqcp"]
+[ext_resource type="Texture2D" uid="uid://cf0vh5jjhcirk" path="res://player/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_19.png" id="21_ujwc1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s4nsw"]
+radius = 26.0
+height = 72.0
+
+[sub_resource type="Animation" id="Animation_t1444"]
+resource_name = "muzzle_flash"
+length = 0.06
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MuzzleFlash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.06),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MuzzleFlash:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.01, 0.06),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.136, 0.113), Vector2(0.15, 0.06)]
+}
+
+[sub_resource type="Animation" id="Animation_nx4kh"]
+resource_name = "reload"
+length = 0.95
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_6ujj6"), ExtResource("4_a2utb"), ExtResource("5_0jbqd"), ExtResource("6_rjeip"), ExtResource("7_qkgcp"), ExtResource("8_y32j5"), ExtResource("9_wdnxo"), ExtResource("10_c2bp3"), ExtResource("11_0wwqn"), ExtResource("12_47xb3"), ExtResource("13_dmq70"), ExtResource("14_liuch"), ExtResource("15_k8n8y"), ExtResource("16_p7fvx"), ExtResource("17_jh4a7"), ExtResource("18_x0ol8"), ExtResource("19_x2atu"), ExtResource("20_7rqcp"), ExtResource("21_ujwc1"), ExtResource("3_6ujj6")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stop_reload"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_llvvs"]
+_data = {
+"muzzle_flash": SubResource("Animation_t1444"),
+"reload": SubResource("Animation_nx4kh")
+}
+
+[node name="weapon" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_e3y1h")
+current_ammo = null
+max_ammo = null
+num_bullets = 7
+angle_variation = 25
+bullet_max_range = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8.82988, -5.42883)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_s4nsw")
+
+[node name="MuzzleFlash" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(73, 6)
+scale = Vector2(0.136, 0.113)
+texture = ExtResource("2_non1k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_llvvs")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7.17012, -11.4288)
+scale = Vector2(0.392361, 0.392361)
+texture = ExtResource("3_6ujj6")

@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://brbc056ui18mj"]
+
+[sub_resource type="FontVariation" id="FontVariation_gimo3"]
+spacing_glyph = 5
+
+[resource]
+font = SubResource("FontVariation_gimo3")
+font_size = 15
+font_color = Color(0.695503, 0.695503, 0.695503, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)

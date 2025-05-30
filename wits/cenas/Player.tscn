@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyi1q7pg2c607"]
+
+[ext_resource type="Script" uid="uid://da1ct4ywt4p53" path="res://scripit/Player.gd" id="1_wvos1"]
+[ext_resource type="Script" uid="uid://jwxu6yi1ps00" path="res://scripit/Health.gd" id="2_08aau"]
+[ext_resource type="Script" uid="uid://bjn7pv6gn0cfa" path="res://scripit/StorageBullet.gd" id="3_t3imv"]
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_wvos1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 20.0
+offset_top = 5.0
+offset_right = 1627.0
+offset_bottom = 8.0
+color = Color(1, 0, 0, 0.352941)
+
+[node name="ShootPoint" type="Node2D" parent="."]
+position = Vector2(66, 6)
+
+[node name="Health" type="Node2D" parent="."]
+script = ExtResource("2_08aau")
+
+[node name="StorageBullet" type="Node2D" parent="."]
+script = ExtResource("3_t3imv")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-39, -30, -16, -43, -3, -41, 18, -32, 32, -23, 34, -3, 52, 3, 58, 4, 58, 9, 47, 11, 31, 14, -1, 18, -27, 21, -41, 12, -41, -18)

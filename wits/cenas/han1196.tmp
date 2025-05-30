@@ -1,0 +1,118 @@
+[gd_scene load_steps=22 format=3 uid="uid://fftripi53lv1"]
+
+[ext_resource type="Script" path="res://scripit/handgun.gd" id="1_yc5ja"]
+[ext_resource type="Texture2D" uid="uid://ds4p82gvfi25t" path="res://player/Survivor Spine/Survivor Spine/images/muzzle_flash_01.png" id="2_pc7o3"]
+[ext_resource type="Texture2D" uid="uid://y5varrt6d5de" path="res://player/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_0.png" id="3_80rkd"]
+[ext_resource type="Texture2D" uid="uid://ckxy3p5cuiquo" path="res://player/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_1.png" id="4_6wxjv"]
+[ext_resource type="Texture2D" uid="uid://b7wo13g1xdujh" path="res://player/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_2.png" id="5_7wjdg"]
+[ext_resource type="Texture2D" uid="uid://bm375sr2d7w52" path="res://player/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_3.png" id="6_s7ve1"]
+[ext_resource type="Texture2D" uid="uid://dff2rvhn5upcl" path="res://player/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_4.png" id="7_445eo"]
+[ext_resource type="Texture2D" uid="uid://c2liiscie7tvd" path="res://player/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_5.png" id="8_l7i2r"]
+[ext_resource type="Texture2D" uid="uid://tsuof6v4r6dj" path="res://player/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_6.png" id="9_yjg2k"]
+[ext_resource type="Texture2D" uid="uid://ndphiyb1hb66" path="res://player/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_7.png" id="10_rolys"]
+[ext_resource type="Texture2D" uid="uid://cc1alp26hnr8w" path="res://player/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_8.png" id="11_hdmwr"]
+[ext_resource type="Texture2D" uid="uid://opmbc67ewmhn" path="res://player/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_9.png" id="12_yiphk"]
+[ext_resource type="Texture2D" uid="uid://dbmaoqjmgvrmc" path="res://player/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_10.png" id="13_jbhhu"]
+[ext_resource type="Texture2D" uid="uid://bcv7y1dvqbmbr" path="res://player/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_11.png" id="14_a6haf"]
+[ext_resource type="Texture2D" uid="uid://crm1t3nnwnk1n" path="res://player/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_12.png" id="15_3euiq"]
+[ext_resource type="Texture2D" uid="uid://c4s8dqji6ugho" path="res://player/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_13.png" id="16_67hfq"]
+[ext_resource type="Texture2D" uid="uid://dq82exhyouqy0" path="res://player/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_14.png" id="17_7u1aw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s4nsw"]
+radius = 26.0
+height = 72.0
+
+[sub_resource type="Animation" id="Animation_t1444"]
+resource_name = "muzzle_flash"
+length = 0.06
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MuzzleFlash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.06),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MuzzleFlash:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.01, 0.06),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.136, 0.113), Vector2(0.15, 0.06)]
+}
+
+[sub_resource type="Animation" id="Animation_kmue8"]
+resource_name = "reload"
+length = 0.75
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_80rkd"), ExtResource("4_6wxjv"), ExtResource("5_7wjdg"), ExtResource("6_s7ve1"), ExtResource("7_445eo"), ExtResource("8_l7i2r"), ExtResource("9_yjg2k"), ExtResource("10_rolys"), ExtResource("11_hdmwr"), ExtResource("12_yiphk"), ExtResource("13_jbhhu"), ExtResource("14_a6haf"), ExtResource("15_3euiq"), ExtResource("16_67hfq"), ExtResource("17_7u1aw"), ExtResource("3_80rkd")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.75),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stop_reload"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_llvvs"]
+_data = {
+"muzzle_flash": SubResource("Animation_t1444"),
+"reload": SubResource("Animation_kmue8")
+}
+
+[node name="weapon" type="CharacterBody2D"]
+script = ExtResource("1_yc5ja")
+speed = null
+sprint_speed = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.36636, -8.62502)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_s4nsw")
+
+[node name="ShootPoint" type="Node2D" parent="."]
+position = Vector2(66, 6)
+
+[node name="MuzzleFlash" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(58.125, 6.0115)
+scale = Vector2(0.136, 0.113)
+texture = ExtResource("2_pc7o3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_llvvs")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -13)
+scale = Vector2(0.392361, 0.392361)
+texture = ExtResource("3_80rkd")

@@ -1,0 +1,118 @@
+[gd_scene load_steps=4 format=3 uid="uid://1s7b2bkbrki8"]
+
+[ext_resource type="LabelSettings" uid="uid://bpvnyf5wu5lra" path="res://scripit/Hud.tres" id="1_70b3j"]
+[ext_resource type="Script" uid="uid://dql0gdb72va17" path="res://scripit/win.gd" id="1_uyqhp"]
+[ext_resource type="Theme" uid="uid://cucyob3v2bju5" path="res://scripit/button.tres" id="2_uyqhp"]
+
+[node name="WIN" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uyqhp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1.27546e-06, 0.370155, 0.163687, 0.196078)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.0835937
+anchor_top = 0.168056
+anchor_right = 0.935078
+anchor_bottom = 0.339306
+offset_right = 121.1
+offset_bottom = 13.7
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+text = "You survived... for now"
+label_settings = ExtResource("1_70b3j")
+metadata/_edit_use_anchors_ = true
+
+[node name="RestartButton" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.360156
+anchor_top = 0.690278
+anchor_right = 0.639844
+anchor_bottom = 0.766667
+offset_top = 3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart"
+metadata/_edit_use_anchors_ = true
+
+[node name="QuitButton" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.360156
+anchor_top = 0.786111
+anchor_right = 0.639844
+anchor_bottom = 0.8625
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uyqhp")
+text = "Quit Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="save" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.360156
+anchor_top = 0.559722
+anchor_right = 0.639844
+anchor_bottom = 0.636111
+offset_top = -3.05176e-05
+offset_bottom = -3.05176e-05
+text = "Save"
+metadata/_edit_use_anchors_ = true
+
+[node name="NomeInput" type="LineEdit" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.360156
+anchor_top = 0.4625
+anchor_right = 0.639844
+anchor_bottom = 0.538889
+placeholder_text = "your tag:"
+alignment = 1
+max_length = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="Cronometro" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.284375
+anchor_top = 0.361111
+anchor_right = 0.457813
+anchor_bottom = 0.442222
+offset_right = 333.0
+offset_bottom = 87.6
+grow_horizontal = 2
+scale = Vector2(0.4, 0.4)
+text = "00:00:000"
+label_settings = ExtResource("1_70b3j")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Kills" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.529688
+anchor_top = 0.361111
+anchor_right = 0.703125
+anchor_bottom = 0.442222
+offset_right = 333.0
+offset_bottom = 87.6
+grow_horizontal = 2
+scale = Vector2(0.4, 0.4)
+text = "0 Kills"
+label_settings = ExtResource("1_70b3j")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

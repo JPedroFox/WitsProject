@@ -1,0 +1,364 @@
+[gd_scene load_steps=17 format=3 uid="uid://d13l56l3m2iif"]
+
+[ext_resource type="Script" uid="uid://c44yjieavovvp" path="res://scripit/FPS.gd" id="1_p11yp"]
+[ext_resource type="Script" uid="uid://bhtvdwkushfdx" path="res://scripit/Hud.gd" id="1_pl5e7"]
+[ext_resource type="Texture2D" uid="uid://c3jeqfiqcnrhw" path="res://sprites/—Pngtree—cloud or smoke on an_8473681.png" id="2_4fxev"]
+[ext_resource type="LabelSettings" uid="uid://bpvnyf5wu5lra" path="res://scripit/Hud.tres" id="2_44q08"]
+[ext_resource type="Texture2D" uid="uid://d4esep0orcdo2" path="res://sprites/Survivor Spine/Survivor Spine/images/Pistol icon.png" id="3_64iy6"]
+[ext_resource type="Script" uid="uid://bvbv2xavyhin8" path="res://scripit/MiniMap.gd" id="5_dhmsw"]
+[ext_resource type="Texture2D" uid="uid://dqxay1fa1tn5k" path="res://mapa/ae5901392484cf1a3651eec6e9d634ad.png" id="6_ffcxl"]
+[ext_resource type="Texture2D" uid="uid://dsshdorts022f" path="res://mapa/pattern_blueprintPaper.png" id="7_cwfyi"]
+[ext_resource type="Texture2D" uid="uid://j56bp3iv3y38" path="res://mapa/fe633f65fbdb702027be5beeaaf1ce92-cutout.png" id="8_is7co"]
+[ext_resource type="Texture2D" uid="uid://b7rlve73gv14g" path="res://mapa/Red_dot.svg.png" id="9_ldqwk"]
+[ext_resource type="VideoStream" uid="uid://dehd6l0chjohm" path="res://video/videoplayback.ogv" id="11_h8s32"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s48mb"]
+bg_color = Color(0.0823529, 0.0823529, 0.0823529, 0.6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_irpk1"]
+bg_color = Color(1, 0, 0, 0.670588)
+
+[sub_resource type="Animation" id="Animation_tpkwc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hud/VideoStreamPlayer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hud/VideoStreamPlayer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vnblj"]
+resource_name = "playTimer"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hud/Timer:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["3", "2", "1", "GO"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hud/Timer:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 1.9, 2, 2.9, 3, 3.9, 4, 4.9, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.60197, 1.60197), Vector2(0, 0), Vector2(1.60197, 1.60197), Vector2(0, 0), Vector2(1.60197, 1.60197), Vector2(0, 0), Vector2(1.60197, 1.60197), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("hud/Timer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hud")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3.9, 4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_emit_signal"
+}, {
+"args": [],
+"method": &"start_timer"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("hud/VideoStreamPlayer:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("hud/VideoStreamPlayer:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3ghn6"]
+_data = {
+&"RESET": SubResource("Animation_tpkwc"),
+&"playTimer": SubResource("Animation_vnblj")
+}
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="hud" type="CanvasLayer" parent="."]
+script = ExtResource("1_pl5e7")
+
+[node name="Control" type="Control" parent="hud"]
+layout_mode = 3
+anchor_left = 0.662326
+anchor_top = 0.775
+anchor_right = 0.981815
+anchor_bottom = 0.97829
+offset_right = 103.277
+offset_bottom = 36.9647
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.798374, 0.798374)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="hud/Control"]
+modulate = Color(1, 1, 1, 0.490196)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.146421
+anchor_top = -0.321819
+anchor_right = 1.53449
+anchor_bottom = 1.69091
+texture = ExtResource("2_4fxev")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="IconWeapon" type="TextureRect" parent="hud/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -465.0
+offset_top = -148.0
+offset_right = 36.0
+offset_bottom = 15.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_64iy6")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ammo_gun" type="Label" parent="hud/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -165.0
+offset_top = -103.0
+offset_right = -34.0
+offset_bottom = 34.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.669951, 0.669951)
+text = "00"
+label_settings = ExtResource("2_44q08")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ammo_magazin" type="Label" parent="hud/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -100.0
+offset_right = 145.0
+offset_bottom = 37.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.312671, 0.312671)
+text = "000"
+label_settings = ExtResource("2_44q08")
+vertical_alignment = 1
+
+[node name="ProgressHealth" type="ProgressBar" parent="hud/Control"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -347.0
+offset_top = -166.0
+offset_right = -47.0
+offset_bottom = -139.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.15519, 1.15519)
+theme_override_styles/background = SubResource("StyleBoxFlat_s48mb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_irpk1")
+
+[node name="dano" type="ColorRect" parent="hud"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 0.490196)
+
+[node name="FPS" type="Label" parent="hud"]
+anchors_preset = -1
+anchor_left = 0.00703125
+anchor_top = 0.00972222
+anchor_right = 0.0810518
+anchor_bottom = 0.0576694
+offset_right = -54.7464
+offset_bottom = -11.5219
+scale = Vector2(0.251985, 0.251985)
+text = "fps:144"
+label_settings = ExtResource("2_44q08")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_p11yp")
+
+[node name="Cronometro" type="Label" parent="hud"]
+anchors_preset = -1
+anchor_left = 0.302083
+anchor_right = 0.699637
+anchor_bottom = 0.127811
+offset_right = 296.018
+offset_bottom = 54.1784
+grow_horizontal = 2
+scale = Vector2(0.607403, 0.607403)
+text = "00:00:000"
+label_settings = ExtResource("2_44q08")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Label" parent="hud"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0001
+offset_top = -74.0
+offset_right = 83.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(75, 75)
+text = "3"
+label_settings = ExtResource("2_44q08")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MiniMap" type="MarginContainer" parent="hud"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -247.0
+offset_right = 533.0
+offset_bottom = 129.0
+grow_vertical = 0
+scale = Vector2(0.643034, 0.643034)
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("5_dhmsw")
+
+[node name="Frame" type="NinePatchRect" parent="hud/MiniMap"]
+layout_mode = 2
+texture = ExtResource("6_ffcxl")
+region_rect = Rect2(0, 0, 1000, 595)
+patch_margin_left = 16
+patch_margin_top = 32
+patch_margin_right = 16
+patch_margin_bottom = 32
+
+[node name="MarginContainer" type="MarginContainer" parent="hud/MiniMap"]
+layout_mode = 2
+theme_override_constants/margin_left = 34
+theme_override_constants/margin_top = 42
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 43
+
+[node name="Grid" type="TextureRect" parent="hud/MiniMap/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("7_cwfyi")
+stretch_mode = 1
+
+[node name="PlayerM" type="Sprite2D" parent="hud/MiniMap/MarginContainer/Grid"]
+position = Vector2(225.372, 141.171)
+scale = Vector2(0.045, 0.045)
+texture = ExtResource("8_is7co")
+
+[node name="EnemyM" type="Sprite2D" parent="hud/MiniMap/MarginContainer/Grid"]
+visible = false
+position = Vector2(123, 63)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_ldqwk")
+
+[node name="AnimationTimer" type="AnimationPlayer" parent="hud"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_3ghn6")
+}
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="hud"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("11_h8s32")
+autoplay = true
+expand = true
+loop = true

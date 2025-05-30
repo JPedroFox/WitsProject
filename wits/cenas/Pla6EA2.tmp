@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://djkklddd0pt7g"]
+
+[ext_resource type="Script" path="res://cenas/Player.gd" id="1_wvos1"]
+[ext_resource type="Script" path="res://scripit/Health.gd" id="2_08aau"]
+[ext_resource type="PackedScene" uid="uid://fftripi53lv1" path="res://cenas/handgun.tscn" id="2_blh3h"]
+
+[node name="player" type="Node2D"]
+script = ExtResource("1_wvos1")
+
+[node name="Health" type="Node2D" parent="."]
+script = ExtResource("2_08aau")
+
+[node name="CameraTarget" type="Node2D" parent="."]
+position = Vector2(150, 0)
+
+[node name="handgun" parent="." instance=ExtResource("2_blh3h")]

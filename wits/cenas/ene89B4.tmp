@@ -1,0 +1,119 @@
+[gd_scene load_steps=12 format=3 uid="uid://kj81wkg1wqdc"]
+
+[ext_resource type="Script" path="res://scripit/Enemy.gd" id="1_a0hmw"]
+[ext_resource type="Texture2D" uid="uid://drtv0hwkms8xa" path="res://enemys/tds_zombie/export/skeleton-attack_0.png" id="1_ka1gh"]
+[ext_resource type="Script" path="res://scripit/HealthEnemy.gd" id="2_apxb3"]
+[ext_resource type="Script" path="res://scripit/IA_Zombi.gd" id="4_m10w5"]
+[ext_resource type="Texture2D" uid="uid://ccw8b1p22afsa" path="res://player/Survivor Spine/Survivor Spine/images/backpack.png" id="5_p3m0v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7rap6"]
+bg_color = Color(0.0823529, 0.0823529, 0.0823529, 0.6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dkak"]
+bg_color = Color(1, 0, 0, 0.670588)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f8iau"]
+radius = 23.0
+height = 54.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a3rsn"]
+radius = 9.0
+height = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_goaka"]
+radius = 94.0213
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hk4s2"]
+radius = 16.0
+height = 62.0
+
+[node name="Enemy" type="CharacterBody2D"]
+light_mask = 4
+visibility_layer = 3
+script = ExtResource("1_a0hmw")
+
+[node name="HealthEnemy" type="Node2D" parent="."]
+script = ExtResource("2_apxb3")
+
+[node name="ProgressHealth" type="ProgressBar" parent="HealthEnemy"]
+layout_direction = 1
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = -23.0
+scale = Vector2(1, 0.5)
+theme_override_styles/background = SubResource("StyleBoxFlat_7rap6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_7dkak")
+value = 100.0
+show_percentage = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(11, -3)
+scale = Vector2(0.355679, 0.355679)
+texture = ExtResource("1_ka1gh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(-3, 0)
+shape = SubResource("CapsuleShape2D_f8iau")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(4, 21)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_a3rsn")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(6, -21)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_a3rsn")
+
+[node name="IA_Zombi" type="Node2D" parent="."]
+script = ExtResource("4_m10w5")
+speed = null
+patrol_speed = null
+patrol_area_range = null
+num_patrol_points = null
+
+[node name="RangeDetection" type="Area2D" parent="IA_Zombi" groups=["enemy"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="IA_Zombi/RangeDetection"]
+position = Vector2(7, 0)
+polygon = PackedVector2Array(0, 0, 172, 210, 294, 163, 369, 16, 319, -130, 192, -189)
+
+[node name="Sprite2D" type="Sprite2D" parent="IA_Zombi/RangeDetection/CollisionPolygon2D"]
+position = Vector2(299, 6)
+rotation = 3.10748
+texture = ExtResource("5_p3m0v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IA_Zombi/RangeDetection"]
+position = Vector2(29, -2)
+shape = SubResource("CircleShape2D_goaka")
+debug_color = Color(0.997362, 0.0571062, 5.77569e-07, 0.419608)
+
+[node name="FreezTimer" type="Timer" parent="IA_Zombi"]
+wait_time = 3.0
+one_shot = true
+
+[node name="EngageTimer" type="Timer" parent="IA_Zombi"]
+wait_time = 10.0
+one_shot = true
+
+[node name="DamageArea" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
+position = Vector2(27, 1)
+shape = SubResource("CapsuleShape2D_hk4s2")
+debug_color = Color(0.856138, 0.195627, 0.762637, 0.42)
+
+[node name="DamageTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="body_entered" from="IA_Zombi/RangeDetection" to="IA_Zombi" method="_on_range_detection_body_entered"]
+[connection signal="body_exited" from="IA_Zombi/RangeDetection" to="IA_Zombi" method="_on_range_detection_body_exited"]
+[connection signal="timeout" from="IA_Zombi/FreezTimer" to="IA_Zombi" method="_on_freez_timer_timeout"]
+[connection signal="timeout" from="IA_Zombi/EngageTimer" to="IA_Zombi" method="_on_engage_timer_timeout"]
+[connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]
+[connection signal="body_exited" from="DamageArea" to="." method="_on_damage_area_body_exited"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]

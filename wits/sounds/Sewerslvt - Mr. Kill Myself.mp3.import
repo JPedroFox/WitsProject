@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://s5kvkmyfmtqb"
+path="res://.godot/imported/Sewerslvt - Mr. Kill Myself.mp3-a15f2c55057c7da5568f355a9d50747c.mp3str"
+
+[deps]
+
+source_file="res://sounds/Sewerslvt - Mr. Kill Myself.mp3"
+dest_files=["res://.godot/imported/Sewerslvt - Mr. Kill Myself.mp3-a15f2c55057c7da5568f355a9d50747c.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=39.0
+bpm=0.0
+beat_count=0
+bar_beats=4

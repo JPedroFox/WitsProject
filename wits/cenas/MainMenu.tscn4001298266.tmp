@@ -1,0 +1,1808 @@
+[gd_scene load_steps=22 format=3 uid="uid://csx674q3nvm3e"]
+
+[ext_resource type="Script" uid="uid://bus4d4aa08ax2" path="res://scripit/MainMenu.gd" id="1_23c40"]
+[ext_resource type="LabelSettings" uid="uid://bpvnyf5wu5lra" path="res://scripit/Hud.tres" id="2_f5wsn"]
+[ext_resource type="VideoStream" uid="uid://dehd6l0chjohm" path="res://video/videoplayback.ogv" id="3_j1wa1"]
+[ext_resource type="Script" uid="uid://byy1chh4m4pd4" path="res://scripit/MainSettings.gd" id="4_hivtr"]
+[ext_resource type="Script" uid="uid://iav54paa5bod" path="res://scripit/menudificulti.gd" id="4_sipc5"]
+[ext_resource type="AudioStream" uid="uid://pd6wgd5rpyle" path="res://sounds/Born of a Star.mp3" id="5_2rcch"]
+[ext_resource type="AudioStream" uid="uid://fx4m4p4smeig" path="res://sounds/ui-button-click-8-341030.mp3" id="6_6lti1"]
+[ext_resource type="Script" uid="uid://cblhff43afd0i" path="res://scripit/dados.gd" id="6_ekhgf"]
+[ext_resource type="Texture2D" uid="uid://cov8xowqsbd32" path="res://sprites/controles.png" id="7_chewk"]
+[ext_resource type="PackedScene" uid="uid://b606o1tjjli4q" path="res://cenas/StatEntry.tscn" id="7_o1ry1"]
+[ext_resource type="AudioStream" uid="uid://egq5qp7f22r1" path="res://sounds/ui-swipe-click-8-341030.mp3" id="7_sipc5"]
+[ext_resource type="Texture2D" uid="uid://bsfhawld5cnm" path="res://sprites/tastiera.png" id="8_ekhgf"]
+
+[sub_resource type="FontVariation" id="FontVariation_2rcch"]
+spacing_glyph = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_801m5"]
+font = SubResource("FontVariation_2rcch")
+font_size = 100
+font_color = Color(0.695503, 0.695503, 0.695503, 1)
+outline_size = 25
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_0ftt0"]
+resource_name = "PlaySetings"
+length = 2.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/menu/QuitButton:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.00151, 1.00161),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/menu/SettingsButton:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.726984, 0.727084),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/menu/SettingsButton:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.226984, 0.726984),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/menu/QuitButton:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.501507, 1.00151),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/menu/textoGame:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.9999, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/menu/textoGame:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/menu/OptionButton:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.453905, 0.454005),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/menu/OptionButton:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.454005, 0.954005),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/menu/ReturnButton:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.704026, 0.704126),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/menu/ReturnButton:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.704126, 1.20413),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CanvasLayer/menu/DifficultyLabel:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(1.49267, 1.49277),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CanvasLayer/menu/DifficultyLabel:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(1.49277, 1.99277),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CanvasLayer/menu:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CanvasLayer/menu:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CanvasLayer/menu/dados:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("CanvasLayer/menu/dados:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("CanvasLayer/menu/stastics:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0.000273438, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("CanvasLayer/menu/stastics:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0.4999, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_6jw4f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/settings/ShowFPSText:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/settings/MaxFPSText:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/settings/FPSText:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/settings/FPS:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/settings/ShowFPS:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/menu/QuitButton:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/menu/SettingsButton:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/menu/SettingsButton:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/menu/QuitButton:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/menu/textoGame:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CanvasLayer/menu/textoGame:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CanvasLayer/menu/OptionButton:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CanvasLayer/menu/OptionButton:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CanvasLayer/menu/ReturnButton:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CanvasLayer/menu/ReturnButton:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("CanvasLayer/menu/DifficultyLabel:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("CanvasLayer/menu/DifficultyLabel:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("CanvasLayer/menu:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("CanvasLayer/menu:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("CanvasLayer/settings/Controles:modulate")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("CanvasLayer/settings/Tastiera:modulate")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("CanvasLayer/menu/dados:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("CanvasLayer/menu/dados:modulate")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("CanvasLayer/menu/stastics:modulate")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("CanvasLayer/menu/stastics:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_o1ry1"]
+resource_name = "dados"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/menu/dados:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/menu/dados:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_onk1o"]
+resource_name = "intro"
+length = 2.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/menu:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.000646875),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/menu/QuitButton:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.75, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/menu/SettingsButton:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.5, 1.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/menu/PlayButton:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/menu/Title2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 1.25),
+"transitions": PackedFloat32Array(1, 1.03526),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/menu/Title:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/menu/dados:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.25, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/menu/dados:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/menu/stastics:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.25, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2rcch"]
+resource_name = "play"
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/menu:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nwfqa"]
+resource_name = "settings"
+length = 2.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/settings:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.000664063),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/settings/confg:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/settings/MusicText:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/settings/Music:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/settings/EffectsText:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/settings/Effects:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/settings/DisplayMode:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.8, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/settings/Resolution:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = false
+tracks/8/path = NodePath("CanvasLayer/settings/Controls:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.6, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/settings/Back:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1.8, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CanvasLayer/settings/ShowFPSText:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CanvasLayer/settings/MaxFPSText:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CanvasLayer/settings/FPSText:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CanvasLayer/settings/FPS:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CanvasLayer/settings/ShowFPS:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("CanvasLayer/settings/Controles:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(1.6, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("CanvasLayer/settings/Tastiera:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(1.6, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ku3ik"]
+_data = {
+&"PlaySetings": SubResource("Animation_0ftt0"),
+&"RESET": SubResource("Animation_6jw4f"),
+&"dados": SubResource("Animation_o1ry1"),
+&"intro": SubResource("Animation_onk1o"),
+&"play": SubResource("Animation_2rcch"),
+&"settings": SubResource("Animation_nwfqa")
+}
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.993365)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("3_j1wa1")
+volume_db = -80.0
+autoplay = true
+expand = true
+loop = true
+
+[node name="menu" type="Control" parent="CanvasLayer"]
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_23c40")
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="CanvasLayer/menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.121875
+anchor_top = 0.165278
+anchor_right = 0.420312
+anchor_bottom = 0.375
+text = "W.I.T.S."
+label_settings = SubResource("LabelSettings_801m5")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Title2" type="Label" parent="CanvasLayer/menu"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.125
+anchor_top = 0.331974
+anchor_right = 0.899349
+anchor_bottom = 0.431833
+offset_right = 495.583
+offset_bottom = 71.8988
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+text = "(W**** i* t** S**)"
+label_settings = ExtResource("2_f5wsn")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.146094
+anchor_top = 0.441667
+anchor_right = 0.388281
+anchor_bottom = 0.498611
+grow_vertical = 2
+text = "Play"
+metadata/_edit_use_anchors_ = true
+
+[node name="stastics" type="Button" parent="CanvasLayer/menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.146094
+anchor_top = 0.529167
+anchor_right = 0.388281
+anchor_bottom = 0.586111
+grow_vertical = 2
+text = "stastic"
+metadata/_edit_use_anchors_ = true
+
+[node name="SettingsButton" type="Button" parent="CanvasLayer/menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.146094
+anchor_top = 0.616667
+anchor_right = 0.388281
+anchor_bottom = 0.673611
+grow_vertical = 2
+text = "Settings"
+metadata/_edit_use_anchors_ = true
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.146094
+anchor_top = 0.704167
+anchor_right = 0.388281
+anchor_bottom = 0.761111
+offset_top = -3.05176e-05
+grow_vertical = 2
+text = "Quit"
+metadata/_edit_use_anchors_ = true
+
+[node name="ReturnButton" type="Button" parent="CanvasLayer/menu"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.146094
+anchor_top = 0.616667
+anchor_right = 0.388281
+anchor_bottom = 0.673611
+offset_top = -3.05176e-05
+offset_bottom = 3.05176e-05
+grow_vertical = 2
+text = "Return"
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer/menu"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.146094
+anchor_top = 0.529167
+anchor_right = 0.388281
+anchor_bottom = 0.586111
+offset_top = -3.05176e-05
+alignment = 1
+selected = 1
+item_count = 3
+popup/item_0/text = "EASY"
+popup/item_0/id = 0
+popup/item_1/text = "MEDIUM"
+popup/item_1/id = 1
+popup/item_2/text = "HARD"
+popup/item_2/id = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="textoGame" type="Label" parent="CanvasLayer/menu"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.445
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 0.399963
+offset_top = -324.0
+offset_right = 2813.0
+offset_bottom = 2917.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.201505, 0.201505)
+text = "Your objective is simple: eliminate as many zombies as possible — either wipe them all out in the shortest time... or survive and rack up the highest kill count before you're overwhelmed.
+
+The battlefield is divided into three distinct zones, each more dangerous than the last. Progress through them one by one — but stay alert, the undead grow stronger.
+
+You'll have access to three types of weapons:
+A reliable pistol for quick shots
+A powerful shotgun for close encounters
+And a precise rifle for taking down threats at a distance
+
+Choose your loadout wisely. Every second counts. Every bullet matters."
+label_settings = ExtResource("2_f5wsn")
+autowrap_mode = 2
+
+[node name="DifficultyLabel" type="Label" parent="CanvasLayer/menu"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.445
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 0.399963
+offset_top = 132.0
+offset_right = 2805.0
+offset_bottom = 1109.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.202, 0.202)
+text = "Difficulty: %s
+- Health recovery per drop: %.1f%% hit
+- Chance to drop something: %d%%
+- Chance it's health instead of ammo: %d%%
+- Enemy damage: %d %d hits until death
+- Field of view: %dm
+- Total zombies: %d"
+label_settings = ExtResource("2_f5wsn")
+autowrap_mode = 2
+script = ExtResource("4_sipc5")
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="CanvasLayer/menu"]
+stream = ExtResource("5_2rcch")
+volume_db = -15.0
+bus = &"Music"
+
+[node name="dados" type="Control" parent="CanvasLayer/menu"]
+visible = false
+anchors_preset = 0
+anchor_left = 0.54375
+anchor_top = 0.15
+anchor_right = 0.947656
+anchor_bottom = 0.927778
+script = ExtResource("6_ekhgf")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tabs" type="TabContainer" parent="CanvasLayer/menu/dados"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+tab_alignment = 1
+current_tab = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Completed" type="VBoxContainer" parent="CanvasLayer/menu/dados/Tabs"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="StatEntry" parent="CanvasLayer/menu/dados/Tabs/Completed" instance=ExtResource("7_o1ry1")]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/menu/dados/Tabs/Completed"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CompletedList" type="VBoxContainer" parent="CanvasLayer/menu/dados/Tabs/Completed/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Dead" type="VBoxContainer" parent="CanvasLayer/menu/dados/Tabs"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="StatEntry" parent="CanvasLayer/menu/dados/Tabs/Dead" instance=ExtResource("7_o1ry1")]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/menu/dados/Tabs/Dead"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DeadList" type="VBoxContainer" parent="CanvasLayer/menu/dados/Tabs/Dead/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="settings" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_hivtr")
+
+[node name="confg" type="Label" parent="CanvasLayer/settings"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.361543
+anchor_top = 0.0638889
+anchor_right = 0.811241
+anchor_bottom = 0.192273
+offset_right = 162.974
+offset_bottom = 52.9086
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+text = "Settings"
+label_settings = ExtResource("2_f5wsn")
+metadata/_edit_use_anchors_ = true
+
+[node name="MusicText" type="Label" parent="CanvasLayer/settings"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.29939
+anchor_top = 0.236211
+anchor_right = 0.460941
+anchor_bottom = 0.288501
+offset_right = 279.16
+offset_bottom = 102.75
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+text = "Music:"
+label_settings = ExtResource("2_f5wsn")
+metadata/_edit_use_anchors_ = true
+
+[node name="EffectsText" type="Label" parent="CanvasLayer/settings"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.298438
+anchor_top = 0.318297
+anchor_right = 0.595313
+anchor_bottom = 0.370587
+offset_top = -1.52588e-05
+offset_right = 513.0
+offset_bottom = 102.75
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+text = "sound effect:"
+label_settings = ExtResource("2_f5wsn")
+metadata/_edit_use_anchors_ = true
+
+[node name="ShowFPSText" type="Label" parent="CanvasLayer/settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35438
+anchor_top = 0.551091
+anchor_right = 0.567921
+anchor_bottom = 0.603381
+offset_right = 369.0
+offset_bottom = 102.75
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+text = "Show FPS"
+label_settings = ExtResource("2_f5wsn")
+metadata/_edit_use_anchors_ = true
+
+[node name="MaxFPSText" type="Label" parent="CanvasLayer/settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.299043
+anchor_top = 0.604883
+anchor_right = 0.499998
+anchor_bottom = 0.657173
+offset_right = 347.25
+offset_bottom = 102.75
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+text = "Max FPS:"
+label_settings = ExtResource("2_f5wsn")
+metadata/_edit_use_anchors_ = true
+
+[node name="Music" type="HSlider" parent="CanvasLayer/settings"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.299613
+anchor_top = 0.295274
+anchor_right = 0.784807
+anchor_bottom = 0.319701
+grow_horizontal = 0
+grow_vertical = 2
+min_value = 0.1
+value = 30.1
+metadata/_edit_use_anchors_ = true
+
+[node name="Effects" type="HSlider" parent="CanvasLayer/settings"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.299057
+anchor_top = 0.308321
+anchor_right = 0.784807
+anchor_bottom = 0.390917
+offset_left = 0.319992
+offset_top = 43.469
+grow_horizontal = 0
+grow_vertical = 2
+min_value = 0.1
+value = 47.1
+metadata/_edit_use_anchors_ = true
+
+[node name="DisplayMode" type="OptionButton" parent="CanvasLayer/settings"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.29939
+anchor_top = 0.414046
+anchor_right = 0.784807
+anchor_bottom = 0.465564
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 1
+selected = 1
+item_count = 3
+popup/item_0/text = "Window"
+popup/item_0/id = 0
+popup/item_1/text = "Fullscreen"
+popup/item_1/id = 1
+popup/item_2/text = "Borderless Window"
+popup/item_2/id = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Resolution" type="OptionButton" parent="CanvasLayer/settings"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.29939
+anchor_top = 0.489671
+anchor_right = 0.784807
+anchor_bottom = 0.541189
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 1
+selected = 1
+item_count = 13
+popup/item_0/text = "1920 X 1200"
+popup/item_0/id = 0
+popup/item_1/text = "1920 X 1080"
+popup/item_1/id = 1
+popup/item_2/text = "1680 X 1050"
+popup/item_2/id = 2
+popup/item_3/text = "1600 X 900"
+popup/item_3/id = 3
+popup/item_4/text = "1280 X 1024"
+popup/item_4/id = 4
+popup/item_5/text = "1440 X 900"
+popup/item_5/id = 5
+popup/item_6/text = "1366 X 768"
+popup/item_6/id = 6
+popup/item_7/text = "1280 X 800"
+popup/item_7/id = 7
+popup/item_8/text = "1280 X 720"
+popup/item_8/id = 8
+popup/item_9/text = "1024 X 768"
+popup/item_9/id = 9
+popup/item_10/text = "1024 X 600"
+popup/item_10/id = 10
+popup/item_11/text = "1024 X 576"
+popup/item_11/id = 11
+popup/item_12/text = "854 X 480"
+popup/item_12/id = 12
+metadata/_edit_use_anchors_ = true
+
+[node name="ShowFPS" type="CheckBox" parent="CanvasLayer/settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.302515
+anchor_top = 0.560313
+anchor_right = 0.344182
+anchor_bottom = 0.596954
+offset_bottom = -3.05176e-05
+grow_horizontal = 0
+grow_vertical = 2
+button_pressed = true
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="FPSText" type="Label" parent="CanvasLayer/settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.571613
+anchor_top = 0.60642
+anchor_right = 0.772756
+anchor_bottom = 0.65871
+offset_right = 347.575
+offset_bottom = 102.75
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+text = "000"
+label_settings = ExtResource("2_f5wsn")
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="FPS" type="HSlider" parent="CanvasLayer/settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.299043
+anchor_top = 0.655601
+anchor_right = 0.784238
+anchor_bottom = 0.680029
+offset_top = -3.05176e-05
+grow_horizontal = 0
+grow_vertical = 2
+min_value = 30.0
+max_value = 121.0
+value = 121.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Controls" type="Button" parent="CanvasLayer/settings"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.157986
+anchor_top = 0.699296
+anchor_right = 0.643403
+anchor_bottom = 0.756333
+offset_bottom = 6.10352e-05
+grow_horizontal = 0
+grow_vertical = 2
+text = "Controls"
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Button" parent="CanvasLayer/settings"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.29939
+anchor_top = 0.802613
+anchor_right = 0.784807
+anchor_bottom = 0.85965
+grow_horizontal = 0
+grow_vertical = 2
+text = "Return to Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="Controles" type="TextureRect" parent="CanvasLayer/settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.670313
+anchor_top = 0.541667
+anchor_right = -0.0378375
+anchor_bottom = 0.964828
+offset_right = -26.784
+offset_bottom = -23.6762
+scale = Vector2(0.725419, 0.725419)
+texture = ExtResource("7_chewk")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/settings/Controles"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.579
+anchor_top = 0.833
+anchor_right = 0.579
+anchor_bottom = 0.833
+offset_left = -36.862
+offset_top = -5.07297
+offset_right = 243.138
+offset_bottom = 131.927
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+text = "Move"
+label_settings = ExtResource("2_f5wsn")
+
+[node name="Label3" type="Label" parent="CanvasLayer/settings/Controles"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.804
+anchor_top = 0.024
+anchor_right = 0.804
+anchor_bottom = 0.024
+offset_left = -28.1855
+offset_top = -37.6503
+offset_right = 271.814
+offset_bottom = 99.3497
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+text = "Shoot"
+label_settings = ExtResource("2_f5wsn")
+
+[node name="Label2" type="Label" parent="CanvasLayer/settings/Controles"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.313
+anchor_bottom = 0.314
+offset_left = -53.762
+offset_top = -19.8004
+offset_right = 146.238
+offset_bottom = 116.78
+scale = Vector2(0.25, 0.25)
+text = "Aim"
+label_settings = ExtResource("2_f5wsn")
+
+[node name="Label8" type="Label" parent="CanvasLayer/settings/Controles"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.233
+anchor_top = 0.537
+anchor_right = 0.233
+anchor_bottom = 0.537
+offset_left = -65.2239
+offset_top = -11.8705
+offset_right = 237.776
+offset_bottom = 125.13
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+text = "Gun 2"
+label_settings = ExtResource("2_f5wsn")
+
+[node name="Label9" type="Label" parent="CanvasLayer/settings/Controles"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.236
+anchor_top = 0.447
+anchor_right = 0.236
+anchor_bottom = 0.447
+offset_left = -66.8979
+offset_top = -11.2903
+offset_right = 236.102
+offset_bottom = 125.71
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+text = "Gun 1"
+label_settings = ExtResource("2_f5wsn")
+
+[node name="Label10" type="Label" parent="CanvasLayer/settings/Controles"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.233
+anchor_top = 0.692
+anchor_right = 0.233
+anchor_bottom = 0.692
+offset_left = -65.2239
+offset_top = -13.5589
+offset_right = 237.776
+offset_bottom = 123.441
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+text = "Gun 3"
+label_settings = ExtResource("2_f5wsn")
+
+[node name="Label6" type="Label" parent="CanvasLayer/settings/Controles"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.966
+anchor_top = 0.114
+anchor_right = 0.966
+anchor_bottom = 0.114
+offset_left = 4.10608
+offset_top = -17.5527
+offset_right = 804.106
+offset_bottom = 119.447
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+text = "Switch Weapon"
+label_settings = ExtResource("2_f5wsn")
+
+[node name="Label7" type="Label" parent="CanvasLayer/settings/Controles"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.079
+anchor_top = 0.114
+anchor_right = 0.079
+anchor_bottom = 0.114
+offset_left = -197.097
+offset_top = -17.5527
+offset_right = 602.903
+offset_bottom = 119.447
+scale = Vector2(0.25, 0.25)
+text = "Switch Weapon"
+label_settings = ExtResource("2_f5wsn")
+
+[node name="Label4" type="Label" parent="CanvasLayer/settings/Controles"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.552
+anchor_top = 0.051
+anchor_right = 0.552
+anchor_bottom = 0.051
+offset_left = -38.656
+offset_top = -28.331
+offset_right = 270.344
+offset_bottom = 108.669
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+text = "Pause"
+label_settings = ExtResource("2_f5wsn")
+
+[node name="Label5" type="Label" parent="CanvasLayer/settings/Controles"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.793
+anchor_top = 0.55
+anchor_right = 0.793
+anchor_bottom = 0.55
+offset_left = -13.7765
+offset_top = 10.2398
+offset_right = 342.224
+offset_bottom = 147.24
+grow_horizontal = 2
+scale = Vector2(0.25, 0.25)
+text = "Reload"
+label_settings = ExtResource("2_f5wsn")
+
+[node name="Tastiera" type="TextureRect" parent="CanvasLayer/settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.75625
+anchor_top = 0.0819444
+anchor_right = 0.0875
+anchor_bottom = 0.491667
+offset_right = -41.0
+offset_bottom = -16.0
+texture = ExtResource("8_ekhgf")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/settings/Tastiera"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.135
+anchor_top = 0.423
+anchor_right = 0.135
+anchor_bottom = 0.423
+offset_left = -72.9
+offset_top = -23.785
+offset_right = 207.1
+offset_bottom = 113.215
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+text = "Move"
+label_settings = ExtResource("2_f5wsn")
+
+[node name="Label7" type="Label" parent="CanvasLayer/settings/Tastiera"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.037
+anchor_bottom = 0.037
+offset_left = -56.0
+offset_top = -28.915
+offset_right = 253.0
+offset_bottom = 108.085
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+text = "Pause"
+label_settings = ExtResource("2_f5wsn")
+
+[node name="Label3" type="Label" parent="CanvasLayer/settings/Tastiera"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.766
+anchor_top = 0.308
+anchor_right = 0.766
+anchor_bottom = 0.308
+offset_left = -26.64
+offset_top = 4.13996
+offset_right = 273.36
+offset_bottom = 141.14
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.738274
+scale = Vector2(0.2, 0.2)
+text = "Shoot"
+label_settings = ExtResource("2_f5wsn")
+
+[node name="Label2" type="Label" parent="CanvasLayer/settings/Tastiera"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.848
+anchor_top = 0.645
+anchor_right = 0.848
+anchor_bottom = 0.645
+offset_left = -26.92
+offset_top = -20.275
+offset_right = 173.08
+offset_bottom = 116.725
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+text = "Aim"
+label_settings = ExtResource("2_f5wsn")
+
+[node name="Label8" type="Label" parent="CanvasLayer/settings/Tastiera"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.361
+anchor_right = 0.361
+offset_left = -30.367
+offset_top = -23.0
+offset_right = 272.633
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+text = "Gun 2"
+label_settings = ExtResource("2_f5wsn")
+
+[node name="Label9" type="Label" parent="CanvasLayer/settings/Tastiera"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.138
+anchor_top = 0.016
+anchor_right = 0.138
+anchor_bottom = 0.016
+offset_left = -29.52
+offset_top = -27.72
+offset_right = 273.48
+offset_bottom = 109.28
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+text = "Gun 1"
+label_settings = ExtResource("2_f5wsn")
+
+[node name="Label10" type="Label" parent="CanvasLayer/settings/Tastiera"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.592
+anchor_top = 0.016
+anchor_right = 0.592
+anchor_bottom = 0.016
+offset_left = -27.3414
+offset_top = -22.464
+offset_right = 275.659
+offset_bottom = 114.536
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+text = "Gun 3"
+label_settings = ExtResource("2_f5wsn")
+
+[node name="Label6" type="Label" parent="CanvasLayer/settings/Tastiera"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.848
+anchor_top = 0.042
+anchor_right = 0.848
+anchor_bottom = 0.042
+offset_left = -78.0837
+offset_top = -18.718
+offset_right = 721.916
+offset_bottom = 118.282
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+text = "Switch Weapon"
+label_settings = ExtResource("2_f5wsn")
+
+[node name="Label4" type="Label" parent="CanvasLayer/settings/Tastiera"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.256
+anchor_top = 0.903
+anchor_right = 0.256
+anchor_bottom = 0.903
+offset_left = 8.25777
+offset_top = -18.937
+offset_right = 209.258
+offset_bottom = 118.063
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+text = "Run"
+label_settings = ExtResource("2_f5wsn")
+
+[node name="Label5" type="Label" parent="CanvasLayer/settings/Tastiera"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.601
+anchor_top = 0.779
+anchor_right = 0.601
+anchor_bottom = 0.779
+offset_left = -41.54
+offset_top = -7.80501
+offset_right = 314.46
+offset_bottom = 129.195
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+text = "Reload"
+label_settings = ExtResource("2_f5wsn")
+
+[node name="uiButton" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("6_6lti1")
+volume_db = -5.0
+bus = &"Effects"
+
+[node name="uiSwipe" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("7_sipc5")
+volume_db = -20.0
+bus = &"Effects"
+
+[node name="AnimationMenu" type="AnimationPlayer" parent="CanvasLayer"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ku3ik")
+}

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcur3rkybws50"]
+
+[ext_resource type="AudioStream" uid="uid://s5kvkmyfmtqb" path="res://sounds/Sewerslvt - Mr. Kill Myself.mp3" id="1_lsei3"]
+[ext_resource type="Script" uid="uid://cmao52m08hpb2" path="res://sounds/audio_stream_player.gd" id="2_rvknh"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_lsei3")
+volume_db = -10.0
+bus = &"Music"
+script = ExtResource("2_rvknh")

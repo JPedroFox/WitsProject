@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4e2bvftnk4tw"]
+
+[ext_resource type="Script" uid="uid://dwl3ruf3havvn" path="res://scripit/life.gd" id="1_7gyc3"]
+[ext_resource type="Texture2D" uid="uid://vjkfrcbiyouw" path="res://sprites/pngtree-heal-game-icon-png-image_12796981-cutout.png" id="1_n56od"]
+[ext_resource type="Texture2D" uid="uid://c3jeqfiqcnrhw" path="res://sprites/—Pngtree—cloud or smoke on an_8473681.png" id="2_u463g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n56od"]
+radius = 14.0357
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_7gyc3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_n56od")
+
+[node name="—pngtree—cloudOrSmokeOnAn8473681" type="Sprite2D" parent="."]
+position = Vector2(1.43051e-06, 5.96046e-07)
+scale = Vector2(0.0177083, 0.0314815)
+texture = ExtResource("2_u463g")
+
+[node name="Pngtree-heal-game-icon-png-image12796981-cutout" type="Sprite2D" parent="."]
+position = Vector2(1.19209e-07, 5.96046e-08)
+scale = Vector2(0.0637755, 0.0637755)
+texture = ExtResource("1_n56od")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

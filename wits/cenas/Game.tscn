@@ -1,0 +1,345 @@
+[gd_scene load_steps=32 format=3 uid="uid://cby47el1nk7no"]
+
+[ext_resource type="Script" uid="uid://dbsp5wg74qv3y" path="res://scripit/Game.gd" id="1_g1rvo"]
+[ext_resource type="PackedScene" uid="uid://cbjeo5ouacr6f" path="res://cenas/mapa0.tscn" id="1_mkps8"]
+[ext_resource type="PackedScene" uid="uid://d13l56l3m2iif" path="res://cenas/Hud.tscn" id="1_qcvaj"]
+[ext_resource type="Shader" uid="uid://bobkh5kl55tc2" path="res://scripit/MASK.gdshader" id="3_guorw"]
+[ext_resource type="Shader" uid="uid://8lxt3wxi7n0a" path="res://scripit/branco.gdshader" id="3_xkw0e"]
+[ext_resource type="PackedScene" uid="uid://dyi1q7pg2c607" path="res://cenas/Player.tscn" id="5_67id4"]
+[ext_resource type="Script" uid="uid://buup5hadnhhsy" path="res://scripit/maskCAM.gd" id="5_401hs"]
+[ext_resource type="Texture2D" uid="uid://djws5cuv2vf6x" path="res://sprites/181-1813840_cone-cone-shaped-shape-3d-black-geometric-funnel.png" id="7_lben0"]
+[ext_resource type="Script" uid="uid://clf1bo3x3tnvl" path="res://scripit/lanterna.gd" id="7_tts4y"]
+[ext_resource type="Texture2D" uid="uid://malmem4jk2n6" path="res://mapa/0 Piano terra.png" id="8_r5yp8"]
+[ext_resource type="Script" uid="uid://bafsqrpdyvr0w" path="res://scripit/LuzManager.gd" id="11_hklm0"]
+[ext_resource type="Script" uid="uid://ck8uxg4kipsp7" path="res://scripit/EnemySpawner.gd" id="11_vdng2"]
+[ext_resource type="Script" uid="uid://df27gxwh8rulr" path="res://scripit/MouseTracker.gd" id="12_r244p"]
+[ext_resource type="Script" uid="uid://c4xycbvfnio1r" path="res://scripit/unlock_3.gd" id="14_o11tb"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fhuta"]
+viewport_path = NodePath("visibilityMask")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ej5fx"]
+resource_local_to_scene = true
+shader = ExtResource("3_guorw")
+shader_parameter/mask_texture = SubResource("ViewportTexture_fhuta")
+shader_parameter/mask_with_alpha = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_p3e5q"]
+viewport_path = NodePath("visibility")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v4a1s"]
+shader = ExtResource("3_xkw0e")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_o11tb"]
+polygon = PackedVector2Array(-72, 347, -73, 317, -1118, 313, -1106, 628, -79, 631, -83, 598, -596, 604, -598, 347)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0oim2"]
+polygon = PackedVector2Array(-1706.13, -1484.85, -1639.93, -475.554, -1371.63, -468.585, -1365.82, -29.5591, -528.423, -27.2362, -528.423, 227.12, 555.204, 229.443, 558.689, 652.209, 1012.81, 649.886, 1013.97, 221.313, 3965.2, 228.281, 3967.53, 73.8094, 4696.91, 74.9709, 4700.4, 637.11, 4749.18, 631.303, 4748.02, -409.351, 5519.22, -411.674, 5519.22, -861.153, 5951.27, -856.507, 5952.44, -792.628, 5991.92, -791.466, 5991.92, -1128.29, 6411.21, -1125.96, 6407.72, -796.112, 6439.08, -793.789, 6439.08, -1123.64, 6750.35, -1121.32, 6752.67, -1069.05, 6780.55, -1069.05, 6775.9, -1121.32, 6961.73, -1121.32, 6962.89, -900.642, 6781.71, -900.642, 6781.71, -973.813, 6754.99, -973.813, 6754.99, -777.529, 6780.55, -779.852, 6780.55, -863.476, 6965.21, -866.96, 6962.89, -664.869, 6777.06, -664.869, 6777.06, -699.712, 6752.67, -698.551, 6751.51, -668.353, 6435.6, -666.031, 6439.08, -697.39, 6410.04, -697.39, 6411.21, -668.353, 5990.76, -663.708, 5988.44, -698.551, 5952.44, -696.228, 5948.95, -135.25, 10943.2, -150.349, 10940.8, -376.831, 13365.9, -382.638, 13363.6, -413.997, 12778.2, -416.32, 12772.4, -1761.27, 13645.8, -1758.95, 13652.8, -420.966, 13536.7, -419.804, 13536.7, -383.8, 13652.8, -383.8, 13655.1, 927.471, 12275.3, 930.955, 12275.3, 1064.52, 12197.5, 1065.68, 12197.5, 1099.36, 12275.3, 1099.36, 12271.9, 2568.59, 12316, 2566.27, 12317.2, 2338.63, 15018.7, 2343.27, 15038.4, 3459.42, 15072.1, 3451.29, 15083.7, 2344.43, 16424, 2349.08, 16428.7, 3714.94, 16202.2, 3720.74, 16205.7, 3759.07, 16425.2, 3768.36, 16431, 5589.51, 15539, 5589.51, 15537.8, 5116.8, 15386.8, 5114.48, 15386.8, 5152.8, 15497.2, 5153.97, 15500.7, 6028.53, 15384.5, 6032.02, 15386.8, 6064.54, 16427.5, 6066.86, 16431, 6961.17, 16325.3, 6961.17, 16325.3, 7001.82, 16428.7, 6999.5, 16429.8, 7885.68, 15069.8, 7892.65, 15075.6, 7302.64, 15043.1, 7303.8, 15033.8, 7884.52, 11854.9, 7896.14, 11853.7, 6071.51, 12437.9, 6074.99, 12437.9, 6034.34, 11851.4, 6033.18, 11849.1, 4545.37, 11815.4, 4544.21, 11813.1, 5570.92, 11161.5, 5576.73, 11160.3, 5620.87, 11815.4, 5619.16, 11815.4, 7893.81, 10926.9, 7897.3, 10924.6, 5616.22, 11044.2, 5617.38, 11045.4, 5572.09, 10922.3, 5573.25, 10923.4, 3301.46, 11050, 3300.3, 11050, 3261.97, 10925.7, 3261.97, 10923.4, 979.736, 11816.6, 975.09, 11816.6, 2032, 11854.9, 2035.49, 11851.4, 1095.88, 11937.4, 1099.36, 11933.9, 1062.2, 11851.4, 1062.2, 11853.7, 929.794, 11206.8, 927.471, 11203.3, 811.326, 10946.6, 813.649, 10940.8, 698.667, 5951.27, 689.375, 5950.11, 1702.15, 5947.79, 1985.55, 5991.92, 1987.87, 5996.57, 1716.09, 6533.16, 1710.28, 6535.48, 1973.93, 6569.16, 1971.61, 6569.16, 1215.51, 6743.38, 1217.83, 6748.02, 1522.13, 6780.54, 1522.13, 6780.54, 1453.61, 6965.21, 1453.61, 6962.89, 1673.12, 6778.22, 1674.28, 6778.22, 1628.98, 6745.7, 1627.82, 6745.7, 2099.37, 6566.84, 2099.37, 6565.68, 2074.98, 6540.12, 2076.14, 6540.12, 2101.69, 5990.76, 2099.37, 5990.76, 2062.2, 5948.95, 2061.04, 5951.27, 2343.27, 5506.44, 2343.27, 5504.12, 1435.02, 4749.18, 1432.7, 4745.69, 855.461, 4698.07, 856.623, 4693.43, 1553.49, -1651.54, 1553.49, -1649.22, 1083.1, -2186.97, 1081.94, -2182.32, 640.594, -1651.54, 638.271, -1651.54, 515.158, -1614.37, 516.32, -1621.34, -1535.95, -2321.69, -1378, -2279.88, 7969.31, 16756.2, 8044.8, 16822.4, -2053.96)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_g2l4x"]
+polygon = PackedVector2Array(796.478, 478.83, 1098.42, 477.799, 1098.55, 458.984, 1103.7, 458.855, 1103.44, 477.154, 1212.34, 477.154, 1212.34, 481.665, 1104.73, 481.278, 1104.48, 631.797, 1118.14, 631.411, 1118.52, 635.921, 1051.77, 636.05, 1052.41, 670.974, 1047.52, 671.102, 1047.39, 635.792, 1000.86, 636.179, 1000.74, 671.102, 997.128, 670.974, 997.128, 636.179, 949.704, 636.05, 949.575, 646.875, 975.478, 647.004, 975.478, 654.092, 972.127, 654.221, 972.385, 650.87, 949.317, 650.87, 949.059, 665.174, 971.74, 665.303, 971.612, 661.824, 975.478, 661.824, 975.478, 672.391, 971.74, 672.391, 971.74, 668.654, 949.317, 668.267, 949.575, 682.701, 972.127, 682.83, 972.256, 679.608, 975.349, 679.608, 975.349, 683.087, 1051.38, 682.701, 1051.38, 687.082, 1027.41, 687.082, 1027.03, 733.089, 1118.26, 732.702, 1118.39, 737.728, 1103.57, 737.599, 1103.57, 836.15, 1115.3, 836.184, 1115.3, 840.694, 1103.57, 840.991, 1103.57, 852.55, 1098.93, 852.421, 1099.06, 737.728, 829.598, 738.114, 829.598, 733.346, 883.852, 733.089, 883.594, 687.211, 843.773, 686.953, 843.902, 682.314, 920.708, 682.958, 920.579, 679.35, 924.317, 679.35, 924.317, 682.958, 945.58, 682.958, 945.709, 668.267, 924.317, 668.267, 924.317, 671.618, 920.837, 671.489, 920.579, 661.824, 924.059, 661.953, 924.059, 664.788, 945.709, 665.046, 945.58, 650.87, 924.188, 650.612, 924.317, 653.963, 920.579, 653.834, 920.451, 647.004, 945.709, 647.004, 945.451, 635.921, 898.285, 636.437, 898.414, 671.36, 895.321, 671.102, 895.192, 635.921, 847.639, 636.308, 847.768, 671.231, 842.871, 671.36, 843.129, 636.437, 794.03, 635.921, 793.901, 531.795, 745.962, 531.666, 745.575, 546.872, 741.322, 547.001, 741.193, 430.246, 667.996, 430.375, 667.996, 425.22, 741.322, 425.349, 741.58, 308.722, 745.833, 308.722, 745.704, 384.497, 792.097, 386.302, 792.483, 368.646, 796.865, 368.518)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jx8vh"]
+polygon = PackedVector2Array(-14.4333, -2.44855, 12.1136, -2.3197, 12.3715, 2.70624, -14.5623, 2.70624)
+
+[sub_resource type="Gradient" id="Gradient_tewxb"]
+offsets = PackedFloat32Array(0, 0.678899)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4y5o8"]
+gradient = SubResource("Gradient_tewxb")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8rfts"]
+polygon = PackedVector2Array(-24, -191, 28, -195, 29, 191, -24, 191)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jfj1b"]
+polygon = PackedVector2Array(-165, -15, 168, -18, 173, 21, -168, 21)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1pbjv"]
+polygon = PackedVector2Array(-18, -142, 15, -144, 16, 157, -17, 157)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1pbjv"]
+size = Vector2(56, 382)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rfts"]
+size = Vector2(336, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfj1b"]
+size = Vector2(311, 224)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0oim2"]
+size = Vector2(29, 299)
+
+[node name="Game" type="Node2D"]
+light_mask = 32
+script = ExtResource("1_g1rvo")
+metadata/_edit_horizontal_guides_ = [16939.0]
+metadata/_edit_vertical_guides_ = [25042.0, 7443.0]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -2847.0
+offset_top = -5762.0
+offset_right = 21752.0
+offset_bottom = 11153.0
+color = Color(0, 0, 0, 1)
+
+[node name="MapBlack" type="Sprite2D" parent="."]
+modulate = Color(0.12549, 0.12549, 0.12549, 1)
+position = Vector2(7443.07, 1398.81)
+scale = Vector2(9.01255, 9.01255)
+texture = ExtResource("8_r5yp8")
+
+[node name="Mask" type="Sprite2D" parent="." node_paths=PackedStringArray("CAM_linked")]
+material = SubResource("ShaderMaterial_ej5fx")
+position = Vector2(959, 1079)
+texture = SubResource("ViewportTexture_p3e5q")
+script = ExtResource("5_401hs")
+CAM_linked = NodePath("../Camera2D")
+
+[node name="Hud" parent="." instance=ExtResource("1_qcvaj")]
+
+[node name="visibilityMask" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(2500, 2000)
+render_target_update_mode = 4
+
+[node name="MaskCAM" type="Camera2D" parent="visibilityMask" node_paths=PackedStringArray("CAM_linked")]
+script = ExtResource("5_401hs")
+CAM_linked = NodePath("../../Camera2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="visibilityMask"]
+material = SubResource("ShaderMaterial_v4a1s")
+position = Vector2(7443.07, 1398.81)
+scale = Vector2(9.01255, 9.01255)
+texture = ExtResource("8_r5yp8")
+
+[node name="LightOccluder1" type="LightOccluder2D" parent="visibilityMask/Sprite2D"]
+position = Vector2(-549.123, 88.4322)
+scale = Vector2(0.110956, 0.110956)
+occluder = SubResource("OccluderPolygon2D_o11tb")
+
+[node name="LightOccluder2" type="LightOccluder2D" parent="visibilityMask/Sprite2D"]
+position = Vector2(-569.41, 63.7999)
+scale = Vector2(0.110956, 0.110956)
+occluder = SubResource("OccluderPolygon2D_0oim2")
+
+[node name="LightOccluder3" type="LightOccluder2D" parent="visibilityMask/Sprite2D"]
+scale = Vector2(1, 1)
+occluder = SubResource("OccluderPolygon2D_g2l4x")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="visibilityMask/Sprite2D"]
+position = Vector2(1153.96, 838.375)
+scale = Vector2(1, 1)
+occluder = SubResource("OccluderPolygon2D_jx8vh")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="visibilityMask/Sprite2D"]
+position = Vector2(1205.51, 838.375)
+scale = Vector2(1, 1)
+occluder = SubResource("OccluderPolygon2D_jx8vh")
+
+[node name="LuzManager" type="Node" parent="visibilityMask/Sprite2D"]
+script = ExtResource("11_hklm0")
+min_time = 0.01
+max_time = 1.0
+
+[node name="PointLight2D" type="PointLight2D" parent="visibilityMask/Sprite2D/LuzManager"]
+position = Vector2(293, 2855)
+scale = Vector2(4.75, 4.75)
+blend_mode = 1
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_4y5o8")
+
+[node name="PointLight2D2" type="PointLight2D" parent="visibilityMask/Sprite2D/LuzManager"]
+position = Vector2(6869, 2739)
+scale = Vector2(4.75, 4.75)
+blend_mode = 1
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_4y5o8")
+
+[node name="PointLight2D3" type="PointLight2D" parent="visibilityMask/Sprite2D/LuzManager"]
+position = Vector2(1988, 2683)
+scale = Vector2(4.75, 4.75)
+blend_mode = 1
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_4y5o8")
+
+[node name="PointLight2D4" type="PointLight2D" parent="visibilityMask/Sprite2D/LuzManager"]
+position = Vector2(8169, 4013)
+scale = Vector2(4.75, 4.75)
+blend_mode = 1
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_4y5o8")
+
+[node name="PointLight2D5" type="PointLight2D" parent="visibilityMask/Sprite2D/LuzManager"]
+position = Vector2(8156, 1242)
+scale = Vector2(4.75, 4.75)
+blend_mode = 1
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_4y5o8")
+
+[node name="PointLight2D6" type="PointLight2D" parent="visibilityMask/Sprite2D/LuzManager"]
+position = Vector2(7236, 2736)
+scale = Vector2(4.75, 4.75)
+blend_mode = 1
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_4y5o8")
+
+[node name="PointLight2D7" type="PointLight2D" parent="visibilityMask/Sprite2D/LuzManager"]
+position = Vector2(15762, 1651)
+scale = Vector2(4.75, 4.75)
+blend_mode = 1
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_4y5o8")
+
+[node name="PointLight2D13" type="PointLight2D" parent="visibilityMask/Sprite2D/LuzManager"]
+position = Vector2(14375, 2984)
+scale = Vector2(4.75, 4.75)
+blend_mode = 1
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_4y5o8")
+
+[node name="PointLight2D8" type="PointLight2D" parent="visibilityMask/Sprite2D/LuzManager"]
+position = Vector2(15532, 739)
+scale = Vector2(8.5625, 7.89844)
+blend_mode = 1
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_4y5o8")
+
+[node name="PointLight2D9" type="PointLight2D" parent="visibilityMask/Sprite2D/LuzManager"]
+position = Vector2(17383, 7904)
+scale = Vector2(4.75, 4.75)
+blend_mode = 1
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_4y5o8")
+
+[node name="PointLight2D10" type="PointLight2D" parent="visibilityMask/Sprite2D/LuzManager"]
+position = Vector2(14383, 6411)
+scale = Vector2(4.75, 4.75)
+blend_mode = 1
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_4y5o8")
+
+[node name="PointLight2D11" type="PointLight2D" parent="visibilityMask/Sprite2D/LuzManager"]
+position = Vector2(15338, 7456)
+scale = Vector2(5.66406, 4.75)
+blend_mode = 1
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_4y5o8")
+
+[node name="PointLight2D12" type="PointLight2D" parent="visibilityMask/Sprite2D/LuzManager"]
+position = Vector2(16546, 7490)
+scale = Vector2(6.70508, 7.53125)
+blend_mode = 1
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_4y5o8")
+
+[node name="block1" type="LightOccluder2D" parent="visibilityMask"]
+position = Vector2(7027, 2692)
+occluder = SubResource("OccluderPolygon2D_8rfts")
+
+[node name="block2" type="LightOccluder2D" parent="visibilityMask"]
+position = Vector2(14370, 3059)
+occluder = SubResource("OccluderPolygon2D_jfj1b")
+
+[node name="block3" type="LightOccluder2D" parent="visibilityMask"]
+position = Vector2(14144, 4079)
+occluder = SubResource("OccluderPolygon2D_1pbjv")
+
+[node name="lanterna" type="PointLight2D" parent="visibilityMask"]
+position = Vector2(876, 721)
+blend_mode = 1
+shadow_enabled = true
+texture = ExtResource("7_lben0")
+offset = Vector2(760, -10)
+script = ExtResource("7_tts4y")
+
+[node name="visibility" type="SubViewport" parent="."]
+transparent_bg = true
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+size = Vector2i(2500, 2000)
+render_target_update_mode = 4
+
+[node name="MaskCAM" type="Camera2D" parent="visibility" node_paths=PackedStringArray("CAM_linked")]
+script = ExtResource("5_401hs")
+CAM_linked = NodePath("../../Camera2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="visibility"]
+position = Vector2(7443.07, 1398.81)
+scale = Vector2(9.01255, 9.01255)
+texture = ExtResource("8_r5yp8")
+
+[node name="Mapa0" parent="visibility" instance=ExtResource("1_mkps8")]
+z_index = -1000
+scale = Vector2(1, 1)
+
+[node name="EnemySpawner" type="Node2D" parent="visibility"]
+script = ExtResource("11_vdng2")
+
+[node name="Zone1" type="Area2D" parent="visibility/EnemySpawner"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="visibility/EnemySpawner/Zone1"]
+polygon = PackedVector2Array(699, 2669, 179, 2671, 194, 2987, 724, 3001, 749, 3442, 6938, 3481, 6951, 2112, 6340, 2094, 6345, 2238, 3369, 2225, 3373, 2656, 2847, 2647, 2823, 2219, 2445, 2228, 2441, 2849, 1346, 2860, 1337, 2477, 2428, 2481, 2431, 2225, 1756, 2233, 1763, 2003, 891, 2005, 901, 1619, 711, 1619)
+disabled = true
+
+[node name="Zone2" type="Area2D" parent="visibility/EnemySpawner"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="visibility/EnemySpawner/Zone2"]
+polygon = PackedVector2Array(7124, 1672, 7112, 3317, 7899, 3323, 7905, 4247, 8180, 4240, 8167, 2578, 13271, 2587, 13599, 2830, 15906, 2813, 15881, 302, 15158, 302, 15173, 1671, 13347, 1687, 13330, 1882, 8194, 1898, 8172, 1208, 7902, 1225, 7886, 1672)
+
+[node name="Zone3" type="Area2D" parent="visibility/EnemySpawner"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="visibility/EnemySpawner/Zone3"]
+polygon = PackedVector2Array(14073, 5325, 14081, 6223, 14539, 6257, 14569, 7172, 15001, 7181, 14993, 7630, 15366, 7622, 15370, 8105, 16747, 8079, 16743, 7647, 16972, 7634, 16972, 7168, 17468, 7189, 17472, 5625, 14662, 5647, 14671, 4833, 14102, 4842, 14085, 5212, 13294, 5215, 13304, 2995, 14081, 3004, 14086, 3142, 14531, 3137, 14560, 4379, 18693, 4385, 18743, 7515, 17765, 7538, 17751, 8105, 18684, 8105, 18684, 9817, 13310, 9787, 13302, 5308)
+
+[node name="Block1" type="StaticBody2D" parent="visibility/EnemySpawner"]
+position = Vector2(7016, 2696)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="visibility/EnemySpawner/Block1"]
+position = Vector2(14, -4)
+shape = SubResource("RectangleShape2D_1pbjv")
+
+[node name="Block2" type="StaticBody2D" parent="visibility/EnemySpawner"]
+position = Vector2(14293, 2855)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="visibility/EnemySpawner/Block2"]
+position = Vector2(79, 205)
+shape = SubResource("RectangleShape2D_8rfts")
+
+[node name="unlock3" type="Area2D" parent="visibility/EnemySpawner"]
+position = Vector2(13432, 5262)
+script = ExtResource("14_o11tb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="visibility/EnemySpawner/unlock3"]
+position = Vector2(-14.5, 17)
+shape = SubResource("RectangleShape2D_jfj1b")
+
+[node name="Block3" type="StaticBody2D" parent="visibility/EnemySpawner/unlock3"]
+position = Vector2(695, -1163)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="visibility/EnemySpawner/unlock3/Block3"]
+position = Vector2(16.5, -14.5)
+shape = SubResource("RectangleShape2D_0oim2")
+
+[node name="Player" parent="visibility" node_paths=PackedStringArray("Linked_position_node", "MouseTracker") instance=ExtResource("5_67id4")]
+z_index = 100
+position = Vector2(1976, 2685)
+speed = 4.0
+sprint_speed = 8.0
+Linked_position_node = NodePath("../../visibilityMask/lanterna")
+MouseTracker = NodePath("../../MouseTracker")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+top_level = true
+position = Vector2(2034, 2672)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="MouseTracker" type="Node2D" parent="."]
+script = ExtResource("12_r244p")
+
+[connection signal="body_entered" from="visibility/EnemySpawner/unlock3" to="visibility/EnemySpawner/unlock3" method="_on_body_entered"]
