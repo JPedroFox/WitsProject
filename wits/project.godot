@@ -13,8 +13,8 @@ config_version=5
 config/name="wits"
 run/main_scene="res://cenas/MainMenu.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="uid://cqqb0ujxeiifp"
-config/windows_native_icon="res://sprites/icons-set-1_0000s_0011_Layer-103.ico"
+config/icon="uid://d3qsw3x4vd442"
+config/windows_native_icon="res://sprites/skull.ico"
 
 [audio]
 
