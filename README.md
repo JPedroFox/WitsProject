@@ -1,4 +1,6 @@
 # Wits
+2025 4AIN J.Pedro Gregorio Barros
+
 Development of a 2D video game in Godot: programming techniques and interactive design
 
 The project represents the complete creation of a 2D top-down video game developed with the Godot engine. The goal was to deepen fundamental aspects of programming, interactive design and game design, integrating technical elements such as the artificial intelligence of enemies, the damage and health system,
